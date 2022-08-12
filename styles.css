@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Khula&display=swap');
+:root{
+    --player-color:#187de3;
+    --comp-color:rgb(66, 66, 69);
+    --regular-board-size:600px;
+    --regular-cell-size:200px;
+    --regular-font-size:16px;
+    --border-radius:20px;
+    --border-thickness:1px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Khula', sans-serif;
+}
+
+h1 {
+    font-size: calc(var(--regular-font-size)*3);
+    font-weight: 300;
+    text-align: center;
+}
+
+.firstScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.startButton {
+    width: calc(var(--regular-cell-size));
+    height: calc(var(--regular-cell-size)/2.3);
+    border-radius: var(--border-radius);
+    background-color: #0071e3;
+    font-size: calc(var(--regular-font-size)*2);
+    font-weight: 400;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: -.022em;
+}
+
+.startButton:hover {
+    background-color: var(--player-color);
+}
+
+.mainScreen {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: var(--regular-board-size);
+    height: var(--regular-board-size);
+    background-color: rgb(245, 247, 247);
+}
+
+.cell {
+    box-sizing: border-box;
+    height: var(--regular-cell-size);
+    width: var(--regular-cell-size);
+    text-align: center;
+    font-size: calc(var(--regular-font-size)*12);
+    color: var(--player-color);
+    line-height: 1.25em;/* выравниваем textContent по центру*/
+}
+
+.opacity {
+    opacity: .2;
+}
+
+.cell:hover {
+    background-color: rgb(251, 251, 253);
+}
+
+.cellsidestborder {
+    border-left: var(--border-thickness) solid var(--comp-color);
+    border-right: var(--border-thickness) solid var(--comp-color);
+
+}
+
+.celltopbottomborder {
+    border-top: var(--border-thickness) solid var(--comp-color);
+    border-bottom: var(--border-thickness) solid var(--comp-color);
+
+}
+
+.resultWindowDiv {
+    width: calc(var(--regular-board-size)*1.25);
+    height: calc(var(--regular-board-size)*.3);
+    border: var(--border-thickness) solid var(--player-color);
+    border-radius: var(--border-radius);
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color: rgb(250, 250, 250);
+}
+
+.resultText {
+    font-family: 'Khula', sans-serif;
+    margin: calc(var( --regular-board-size)*.05) 0 calc(var( --regular-board-size)*.015) 0;
+    font-size: calc(var(--regular-font-size)*2.3);
+    font-weight: 100;
+    text-align: center;
+}
+
+.resultButtonDiv {
+    background-color: rgb(250, 250, 250);
+    text-decoration: none;
+    padding: 0%;
+    border: 0;
+    font-size: calc(var(--regular-font-size)*1.7);
+    color: var(--player-color);
+}
+
+.resultButtonDiv:hover {
+    color: var(--player-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 420px){
+    :root{
+        --regular-board-size:150px;
+        --regular-cell-size:50px;
+        --regular-font-size:4px;
+        --border-radius:5px;
+        --border-thickness:0.25px;
+    }
+}
+@media (max-height: 920px){
+    :root{
+    --regular-board-size:300px;
+    --regular-cell-size:100px;
+    --regular-font-size:8px;
+    --border-radius:10px;
+    --border-thickness:.5px;
+    }
+}
